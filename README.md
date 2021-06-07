@@ -12,8 +12,8 @@ This repo uses **YOLOv5** and **DeepSORT** to implement object tracking algorith
 
 ## Environments
 
-- Ubuntu20.04 or 18.04 with CUDA 10.0 and cuDNN 7.6.5
-- NVIDIA NX
+- the *X86* architecture: Ubuntu20.04 or 18.04 with CUDA 10.0 and cuDNN 7.6.5
+- the embedded system：NVIDIA Jetson Xavier NX
 - TensorRT 7.0.0.1
 - PyTorch 1.7.1_cu11.0 and TorchVision 0.8.2+cu110
 - OpenCV-Python 4.2
