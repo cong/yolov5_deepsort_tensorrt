@@ -46,7 +46,7 @@ The speeds of DeepSort depend on the target number in the picture.
    python demo.py
    ```
 
-   ![test.gif](https://pic4.zhimg.com/80/v2-1fc447e633d9e7f9ac1fa730cb6279e8_720w.gif)
+   ![test.gif](https://pic1.zhimg.com/80/v2-1fc447e633d9e7f9ac1fa730cb6279e8_720w.gif)
 
 ## Convert
 
