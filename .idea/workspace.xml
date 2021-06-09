@@ -51,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1623218033756</updated>
-      <workItem from="1623218034950" duration="545000" />
+      <workItem from="1623218034950" duration="966000" />
     </task>
     <task id="LOCAL-00001" summary="upload project...">
       <created>1623218122387</created>
@@ -60,7 +60,21 @@
       <option name="project" value="LOCAL" />
       <updated>1623218122387</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="upload project...">
+      <created>1623218584527</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1623218584527</updated>
+    </task>
+    <task id="LOCAL-00003" summary="upload project...">
+      <created>1623218590926</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623218590926</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,9 +100,9 @@
       <screen x="72" y="27" width="2488" height="1413" />
     </state>
     <state x="1039" y="443" width="800" height="543" key="Vcs.Push.Dialog.v2/72.27.2488.1413@72.27.2488.1413" timestamp="1623218349029" />
-    <state x="1381" y="503" width="697" height="456" key="git4idea.merge.GitPullDialog" timestamp="1623218132806">
+    <state x="1381" y="503" width="697" height="470" key="git4idea.merge.GitPullDialog" timestamp="1623218653181">
       <screen x="72" y="27" width="2488" height="1413" />
     </state>
-    <state x="1381" y="503" width="697" height="456" key="git4idea.merge.GitPullDialog/72.27.2488.1413@72.27.2488.1413" timestamp="1623218132806" />
+    <state x="1381" y="503" width="697" height="470" key="git4idea.merge.GitPullDialog/72.27.2488.1413@72.27.2488.1413" timestamp="1623218653181" />
   </component>
 </project>
