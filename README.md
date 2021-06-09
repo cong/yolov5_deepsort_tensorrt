@@ -25,7 +25,7 @@ This repo uses **YOLOv5** and **DeepSORT** to implement object tracking algorith
 
 The speeds of DeepSort depend on the target number in the picture.
 
-| Backbone          | Without TensorRT      | With TensorRT          |
+| Networks          | Without TensorRT      | With TensorRT          |
 | :---------------- | --------------------- | ---------------------- |
 | YOLOV5            | 14ms / 71FPS / 1239M  | 10ms /  100FPS / 2801M |
 | YOLOV5 + DeepSort | 23ms / 43FPS /  1276M | 16ms / 62FPS / 2842M   |
@@ -43,9 +43,9 @@ The speeds of DeepSort depend on the target number in the picture.
 2. Run
 
    ```
-   python demo.py
+   python demo_trt.py
    ```
-
+   ![result.gif](https://pic2.zhimg.com/80/v2-4f108c5312a610bb3901301fd48aef91_720w.gif)
    ![test.gif](https://pic1.zhimg.com/80/v2-d7975d2f02d2cc3bf9baf40acbe43a2a_720w.gif)
 
 ## Convert
@@ -96,6 +96,9 @@ Convert PyTorch yolov5 weights to TensorRT engine.
 1. Training your own model.
 2. Convert your own model to engine(TensorRTX's version must same as YOLOV5's version).
 3. Replace the `***.engine` and `libmyplugins.so` file.
+
+## To update
+Accelerate **DeepSort**
 
 ## Optional setting
 
