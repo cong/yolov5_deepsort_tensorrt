@@ -42,8 +42,8 @@ NVIDIA Jetson Xavier NX:
 
 | Networks          | Without TensorRT | With TensorRT          |
 | :---------------- | ---------------- | ---------------------- |
-| YOLOV5            | \                | 43ms /  23FPS / 2801M  |
-| YOLOV5 + DeepSort | \                | 245ms / 4.3FPS / 2842M |
+| YOLOV5            | \                | 43ms /  23FPS / 5427M  |
+| YOLOV5 + DeepSort | \                | 245ms / 4.3FPS / 73722M |
 
 ## Inference
 
