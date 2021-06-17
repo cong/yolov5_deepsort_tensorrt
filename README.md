@@ -12,35 +12,54 @@ This repo uses **YOLOv5** and **DeepSORT** to implement object tracking algorith
 
 ## Environments
 
-- the *X86* architecture: Ubuntu20.04 or 18.04 with CUDA 10.0 and cuDNN 7.6.5
-- the embedded system：NVIDIA Jetson Xavier NX
-- TensorRT 7.0.0.1
-- PyTorch 1.7.1_cu11.0 and TorchVision 0.8.2+cu110
-- OpenCV-Python 4.2
-- pycuda 2021.1
-
-
+1. the *X86* architecture: 
+   - Ubuntu20.04 or 18.04 with CUDA 10.0 and cuDNN 7.6.5
+   - TensorRT 7.0.0.1
+   - PyTorch 1.7.1_cu11.0, TorchVision 0.8.2+cu110, TorchAudio 0.7.2
+   - OpenCV-Python 4.2
+   - pycuda 2021.1
+2. the NVIDIA embedded  system：
+   - Ubuntu18.04 with CUDA 10.2 and cuDNN 8.0.0
+   - TensorRT 7.1.3.0
+   - PyTorch 1.8.0 and TorchVision 0.9.0
+   - OpenCV-Python 4.1.1
+   - pycuda 2020.1
 
 ## Speed
 
 The speeds of DeepSort depend on the target number in the picture.
+
+The following data are tested in the case of single target in the picture.
+
+the *X86* architecture with GTX 2080Ti :
 
 | Networks          | Without TensorRT      | With TensorRT          |
 | :---------------- | --------------------- | ---------------------- |
 | YOLOV5            | 14ms / 71FPS / 1239M  | 10ms /  100FPS / 2801M |
 | YOLOV5 + DeepSort | 23ms / 43FPS /  1276M | 16ms / 62FPS / 2842M   |
 
+NVIDIA Jetson Xavier NX:
 
+| Networks          | Without TensorRT | With TensorRT          |
+| :---------------- | ---------------- | ---------------------- |
+| YOLOV5            | \                | 43ms /  23FPS / 2801M  |
+| YOLOV5 + DeepSort | \                | 245ms / 4.3FPS / 2842M |
 
 ## Inference
 
-1. clone this repo
+1. Clone this repo
 
    ```shell
    git clone https://github.com/cong/yolov5_deepsort_tensorrt.git
    ```
 
-2. Run
+2. Install the requirements
+
+   ```shell
+   pip install -r requirements.txt
+   ```
+   
+3. Run
 
    ```
    python demo_trt.py
