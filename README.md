@@ -121,5 +121,5 @@ Accelerate **DeepSort**
 
 ## Optional setting
 
-- If you feel that it is helpful to you, please give me a star. Thx!  :)
+- Your likes are my motivation to update the project, if you feel that it is helpful to you, please give me a star. Thx!  :)
 - For more information you can visit the [Blog](http://wangcong.net).
