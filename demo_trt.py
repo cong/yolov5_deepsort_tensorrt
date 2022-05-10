@@ -12,14 +12,14 @@ os.environ['KMP_DUPLICATE_LIB_OK']='True'
 import cv2
 import time
 import ctypes
-import tracker
+import tracker_trt
 from detector_trt import Detector
 
 
 def detect(video_path, engine_file_path):
     detector = Detector(engine_file_path)
-    capture = cv2.VideoCapture(video_path)
-    # capture = cv2.VideoCapture(0)
+    # capture = cv2.VideoCapture(video_path)
+    capture = cv2.VideoCapture(0)
     fps = 0.0
     while True:
         ret, img = capture.read()
@@ -29,10 +29,13 @@ def detect(video_path, engine_file_path):
 
         t1 = time.time()
         bboxes = detector.detect(img)
-
+        # print((time.time() - t1) * 1000)
+        print('--------deep---------')
         if len(bboxes) > 0:
-            list_bboxs = tracker.update(bboxes, img)
-            output_image_frame = tracker.draw_bboxes(img, list_bboxs, line_thickness=None)
+            # t2 = time.time()
+            list_bboxs = tracker_trt.update(bboxes, img)
+            # print((time.time() - t2) * 1000)
+            output_image_frame = tracker_trt.draw_bboxes(img, list_bboxs, line_thickness=None)
         else:
             output_image_frame = img
 
@@ -54,8 +57,8 @@ def detect(video_path, engine_file_path):
 if __name__ == '__main__':
 
     video_path = './video/test.mp4'
-    PLUGIN_LIBRARY = "/home/cong/tensorrtx/yolov5/build/libmyplugins.so"
+    PLUGIN_LIBRARY = "./weights/libmyplugins.so"
     ctypes.CDLL(PLUGIN_LIBRARY)
-    engine_file_path = '/home/cong/tensorrtx/yolov5/build/yolov5s.engine'
+    engine_file_path = './weights/yolov5s.engine'
     detect(video_path, engine_file_path)
 
