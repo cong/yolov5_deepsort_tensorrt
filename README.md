@@ -15,13 +15,13 @@ This repo uses **YOLOv5** and **DeepSORT** to implement object tracking algorith
 1. the *X86* architecture: 
    - Ubuntu20.04 or 18.04 with CUDA 10.0 and cuDNN 7.6.5
    - TensorRT 7.0.0.1
-   - PyTorch 1.7.1_cu11.0, TorchVision 0.8.2+cu110, TorchAudio 0.7.2
+   - ~~PyTorch 1.7.1_cu11.0, TorchVision 0.8.2+cu110, TorchAudio 0.7.2~~
    - OpenCV-Python 4.2
    - pycuda 2021.1
 2. the NVIDIA embedded  system：
    - Ubuntu18.04 with CUDA 10.2 and cuDNN 8.0.0
    - TensorRT 7.1.3.0
-   - PyTorch 1.8.0 and TorchVision 0.9.0
+   - ~~PyTorch 1.8.0 and TorchVision 0.9.0~~
    - OpenCV-Python 4.1.1
    - pycuda 2020.1
 
