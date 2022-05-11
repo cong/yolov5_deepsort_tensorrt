@@ -1,5 +1,4 @@
-from .deep_sort import DeepSort
-
+from .deep_sort_trt import DeepSort
 
 __all__ = ['DeepSort', 'build_tracker']
 

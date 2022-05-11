@@ -7,21 +7,18 @@ This repo uses **YOLOv5** and **DeepSORT** to implement object tracking algorith
 **NVIDIA Jetson Xavier NX**  and the *X86* architecture works all be ok. 
 
 
-
-
-
 ## Environments
 
 1. the *X86* architecture: 
    - Ubuntu20.04 or 18.04 with CUDA 10.0 and cuDNN 7.6.5
    - TensorRT 7.0.0.1
-   - PyTorch 1.7.1_cu11.0, TorchVision 0.8.2+cu110, TorchAudio 0.7.2
+   - ~~PyTorch 1.7.1_cu11.0, TorchVision 0.8.2+cu110, TorchAudio 0.7.2~~
    - OpenCV-Python 4.2
    - pycuda 2021.1
 2. the NVIDIA embedded  system：
    - Ubuntu18.04 with CUDA 10.2 and cuDNN 8.0.0
    - TensorRT 7.1.3.0
-   - PyTorch 1.8.0 and TorchVision 0.9.0
+   - ~~PyTorch 1.8.0 and TorchVision 0.9.0~~
    - OpenCV-Python 4.1.1
    - pycuda 2020.1
 
@@ -36,14 +33,14 @@ the *X86* architecture with GTX 2080Ti :
 | Networks          | Without TensorRT      | With TensorRT          |
 | :---------------- | --------------------- | ---------------------- |
 | YOLOV5            | 14ms / 71FPS / 1239M  | 10ms /  100FPS / 2801M |
-| YOLOV5 + DeepSort | 23ms / 43FPS /  1276M | 16ms / 62FPS / 2842M   |
+| YOLOV5 + DeepSort | 23ms / 43FPS /  1276M | 12ms / 82FPS / 1712M   |
 
 NVIDIA Jetson Xavier NX:
 
 | Networks          | Without TensorRT | With TensorRT          |
 | :---------------- | ---------------- | ---------------------- |
 | YOLOV5            | \                | 43ms /  23FPS / 1397M  |
-| YOLOV5 + DeepSort | \                | 163ms / 6FPS / 3241M   |
+| YOLOV5 + DeepSort | \                | 63ms / 15FPS / 2431M   |
 
 ## Inference
 
@@ -69,15 +66,15 @@ NVIDIA Jetson Xavier NX:
 
 ## Convert
 
-Convert PyTorch yolov5 weights to TensorRT engine.
+#### Convert PyTorch yolov5 weights to TensorRT engine.
 
 **Notice: this repo uses YOLOv5 version 4.0 , so TensorRTX should uses version yolov5-v4.0 !**
 
 1. generate `***.wts` from PyTorch with `***.pt`.
 
    ```shell
-   git clone -b v5.0 https://github.com/ultralytics/yolov5.git
-   git clone https://github.com/wang-xinyu/tensorrtx.git
+   git clone -b v4.0 https://github.com/ultralytics/yolov5.git
+   git clone -b v4.0 https://github.com/wang-xinyu/tensorrtx.git
    # download https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
    cp {tensorrtx}/yolov5/gen_wts.py {ultralytics}/yolov5
    cd {ultralytics}/yolov5
@@ -109,6 +106,8 @@ Convert PyTorch yolov5 weights to TensorRT engine.
 
 
 3. Once the images generated, as follows. _zidane.jpg and _bus.jpg, convert completed!
+#### Convert PyTorch DeepSORT weights to TensorRT engine.
+editing
 
 ## Customize
 
@@ -117,7 +116,7 @@ Convert PyTorch yolov5 weights to TensorRT engine.
 3. Replace the `***.engine` and `libmyplugins.so` file.
 
 ## To update
-Accelerate **DeepSort**
+
 
 ## Optional setting
 

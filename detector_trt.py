@@ -9,9 +9,8 @@ Created on 2021/5/24 14:05
 """
 import cv2
 import numpy as np
-import torch
-import torchvision
 import tensorrt as trt
+import pycuda.autoinit
 import pycuda.driver as cuda
 
 TRT_LOGGER = trt.Logger()
@@ -42,7 +41,7 @@ class Detector:
         # Create a Context on this device,
         self.cfx = cuda.Device(0).make_context()
         stream = cuda.Stream()
-        TRT_LOGGER = trt.Logger(trt.Logger.INFO)
+        TRT_LOGGER = trt.Logger(trt.Logger.ERROR)
         runtime = trt.Runtime(TRT_LOGGER)
 
         # Deserialize the engine from file
@@ -96,7 +95,6 @@ class Detector:
         cuda_outputs = self.cuda_outputs
         bindings = self.bindings
         # Do image preprocess
-        # img_raw, input_image = self.preprocess(im)
         input_image, image_raw, origin_h, origin_w = self.preprocess_image(im)
         # Copy input image to host buffer
         np.copyto(host_inputs[0], input_image.ravel())
@@ -109,11 +107,11 @@ class Detector:
         # Synchronize the stream
         stream.synchronize()
         # Remove any context from the top of the context stack, deactivating it.
-        self.cfx.pop()
+        # self.cfx.pop()
         # Here we use the first row of output in that batch_size = 1
         trt_outputs = host_outputs[0]
         # Do postprocess
-        results_trt= self.post_process_new(trt_outputs, origin_h, origin_w)
+        results_trt = self.post_process(trt_outputs, origin_h, origin_w)
 
         return results_trt
 
@@ -174,7 +172,8 @@ class Detector:
         return:
             y:          A boxes tensor, each row is a box [x1, y1, x2, y2]
         """
-        y = torch.zeros_like(x) if isinstance(x, torch.Tensor) else np.zeros_like(x)
+        # y = torch.zeros_like(x) if isinstance(x, torch.Tensor) else np.zeros_like(x)
+        y = np.zeros_like(x)
         r_w = INPUT_W / origin_w
         r_h = INPUT_H / origin_h
         if r_h > r_w:
@@ -190,7 +189,11 @@ class Detector:
             y[:, 3] = x[:, 1] + x[:, 3] / 2
             y /= r_h
 
+        # back to x,y,w,h format
+        y[:, 2] = y[:, 2] - y[:, 0]
+        y[:, 3] = y[:, 3] - y[:, 1]
         return y
+
 
     def post_process(self, output, origin_h, origin_w):
         """
@@ -209,7 +212,7 @@ class Detector:
         # Reshape to a two dimentional ndarray
         pred = np.reshape(output[1:], (-1, 6))[:num, :]
         # to a torch Tensor
-        pred = torch.Tensor(pred).cuda()
+        # pred = torch.Tensor(pred).cuda()
         # Get the boxes
         boxes = pred[:, :4]
         # Get the scores
@@ -219,64 +222,34 @@ class Detector:
         # Choose those boxes that score > CONF_THRESH
         si = scores > CONF_THRESH
         boxes = boxes[si, :]
-        scores = scores[si]
-        classid = classid[si]
+        scores = scores[si].tolist()
+        classid = classid[si].tolist()
         # Trandform bbox from [center_x, center_y, w, h] to [x1, y1, x2, y2]
-        boxes = self.xywh2xyxy(origin_h, origin_w, boxes)
+        boxes = self.xywh2xyxy(origin_h, origin_w, boxes).tolist()
         # Do nms
-        indices = torchvision.ops.nms(boxes, scores, iou_threshold=IOU_THRESHOLD).cpu()
-        result_boxes = boxes[indices, :].cpu()
-        result_scores = scores[indices].cpu()
-        result_classid = classid[indices].cpu()
-        return result_boxes, result_scores, result_classid
-
-
-    def post_process_new(self, output, origin_h, origin_w):
-        """
-        description: postprocess the prediction
-        param:
-            output:     A tensor likes [num_boxes,cx,cy,w,h,conf,cls_id, cx,cy,w,h,conf,cls_id, ...]
-            origin_h:   height of original image
-            origin_w:   width of original image
-        return:
-            result_boxes: finally boxes, a boxes tensor, each row is a box [x1, y1, x2, y2]
-            result_scores: finally scores, a tensor, each element is the score correspoing to box
-            result_classid: finally classid, a tensor, each element is the classid correspoing to box
-        """
-        # Get the num of boxes detected
-        num = int(output[0])
-        # Reshape to a two dimentional ndarray
-        pred = np.reshape(output[1:], (-1, 6))[:num, :]
-        # to a torch Tensor
-        pred = torch.Tensor(pred).cuda()
-        # Get the boxes
-        boxes = pred[:, :4]
-        # Get the scores
-        scores = pred[:, 4]
-        # Get the classid
-        classid = pred[:, 5]
-        # Choose those boxes that score > CONF_THRESH
-        si = scores > CONF_THRESH
-        boxes = boxes[si, :]
-        scores = scores[si]
-        classid = classid[si]
-        # Trandform bbox from [center_x, center_y, w, h] to [x1, y1, x2, y2]
-        boxes = self.xywh2xyxy(origin_h, origin_w, boxes)
-        # Do nms
-        indices = torchvision.ops.nms(boxes, scores, iou_threshold=IOU_THRESHOLD).cpu()
-        result_boxes = boxes[indices, :].cpu()
-        result_scores = scores[indices].cpu()
-        result_classid = classid[indices].cpu()
+        # indices = torchvision.ops.nms(boxes, scores, iou_threshold=IOU_THRESHOLD).cpu()
+        indices = cv2.dnn.NMSBoxes(boxes, scores, score_threshold=CONF_THRESH, nms_threshold=IOU_THRESHOLD)
+        result_boxes = np.array(boxes)
+        result_scores = np.array(scores)
+        result_classid = np.array(classid)
+        if len(boxes) > 0:
+            result_boxes = result_boxes[indices, :]
+            result_scores = result_scores[indices]
+            result_classid = result_classid[indices]
+        # back to x1, y1, x2, y2 format
+        result_boxes = np.reshape(result_boxes, (-1, 4))
+        result_boxes[:, 2] = result_boxes[:, 2] + result_boxes[:, 0]
+        result_boxes[:, 3] = result_boxes[:, 3] + result_boxes[:, 1]
         #
         results_trt = []
         for i in range(len(result_boxes)):
             x1, y1 = int(result_boxes[i][0]), int(result_boxes[i][1])
             x2, y2 = int(result_boxes[i][2]), int(result_boxes[i][3])
-            cid = result_classid[i]
+            cid = result_classid[i][0]
             lable = categories[int(cid)]
-            conf = result_scores[i]
+            conf = result_scores[i][0]
             results_trt.append(
-                (x1, y1, x2, y2,lable, conf))
+                (x1, y1, x2, y2, lable, conf))
 
         return results_trt
 
