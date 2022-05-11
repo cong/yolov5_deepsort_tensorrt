@@ -79,7 +79,7 @@ NVIDIA Jetson Xavier NX:
    # a file 'yolov5s.wts' will be generated.
    ```
 
-2. build tensorrtx / yolov5 and generate `***.engine`
+2. build t`{tensorrtx}/yolov5` and generate `***.engine`
 
    ```shell
    cd {tensorrtx}/yolov5/
@@ -104,7 +104,35 @@ NVIDIA Jetson Xavier NX:
 
 3. Once the images generated, as follows. _zidane.jpg and _bus.jpg, convert completed!
 #### Convert PyTorch DeepSORT weights to TensorRT engine.
-editing
+1. generate `***.onnx` from PyTorch with `***.pt`.
+
+   ```shell
+   git clone https://github.com/ZQPei/deep_sort_pytorch
+   git clone https://github.com/GesilaA/deepsort_tensorrt.git
+   # 
+   cp {GesilaA}/deepsort_tensorrt/exportOnnx.py {ZQPei}/deep_sort_pytorch
+   cd {ZQPei}/deep_sort_pytorch
+   python exportOnnx.py
+   # a file 'deepsort.onnx' will be generated.
+   cp {GesilaA}/deepsort_tensorrt/deepsort.onnx {ZQPei}/deep_sort_pytorch
+   ```
+
+2. build `{GesilaA}/deepsort_tensorrt` and generate `***.engine`
+
+   ```shell
+   cd {ZQPei}/deep_sort_pytorch
+   # 
+   mkdir build
+   cd build
+   cmake ..
+   make
+   # serialize model to plan file
+   ./onnx2engine ../resources/deepsort.onnx ../resources/deepsort.engine
+   # test
+   ./demo ../resources/deepsort.engine ../resources/track.txt
+   ```
+
+
 
 ## Customize
 
@@ -112,7 +140,7 @@ editing
 2. Convert your own model to engine(TensorRTX's version must same as YOLOV5's version).
 3. Replace the `***.engine` and `libmyplugins.so` file.
 
-## To update
+
 
 
 ## Optional setting
