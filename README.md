@@ -1,5 +1,5 @@
 # yolov5_deepsort_tensorrt
-
+<font color=red size=10>Update!</font>
 ## Introduction
 
 This repo uses **YOLOv5** and **DeepSORT** to implement object tracking algorithm. Also using **TensorRTX** to convert model to engine, and deploying all code on the NVIDIA Xavier with **TensorRT** further.
@@ -24,10 +24,7 @@ This repo uses **YOLOv5** and **DeepSORT** to implement object tracking algorith
 
 ## Speed
 
-The speeds of DeepSort depend on the target number in the picture.
-
 The following data are tested in the case of single target in the picture.
-
 the *X86* architecture with GTX 2080Ti :
 
 | Networks          | Without TensorRT      | With TensorRT          |
