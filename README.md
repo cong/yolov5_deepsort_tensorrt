@@ -69,7 +69,7 @@ NVIDIA Jetson Xavier NX:
 
 ## Convert
 
-Convert PyTorch yolov5 weights to TensorRT engine.
+#### Convert PyTorch yolov5 weights to TensorRT engine.
 
 **Notice: this repo uses YOLOv5 version 4.0 , so TensorRTX should uses version yolov5-v4.0 !**
 
@@ -109,6 +109,8 @@ Convert PyTorch yolov5 weights to TensorRT engine.
 
 
 3. Once the images generated, as follows. _zidane.jpg and _bus.jpg, convert completed!
+#### Convert PyTorch DeepSORT weights to TensorRT engine.
+editing
 
 ## Customize
 
@@ -117,7 +119,7 @@ Convert PyTorch yolov5 weights to TensorRT engine.
 3. Replace the `***.engine` and `libmyplugins.so` file.
 
 ## To update
-Accelerate **DeepSort**
+
 
 ## Optional setting
 
