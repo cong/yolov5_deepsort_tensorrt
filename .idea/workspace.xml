@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c25fa09-d2a1-4ad3-afcb-96bb500dc121" name="Default Changelist" comment="update project..." />
+    <list default="true" id="7c25fa09-d2a1-4ad3-afcb-96bb500dc121" name="Default Changelist" comment="update project...">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_trt.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo_trt.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,7 +222,8 @@
       <workItem from="1644905523157" duration="4827000" />
       <workItem from="1644979694271" duration="1924000" />
       <workItem from="1649226205827" duration="613000" />
-      <workItem from="1652173404956" duration="1980000" />
+      <workItem from="1652173404956" duration="3327000" />
+      <workItem from="1652235799282" duration="767000" />
     </task>
     <task id="LOCAL-00001" summary="upload project...">
       <created>1623218122387</created>
@@ -283,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652173755558</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update project...">
+      <created>1652176351606</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1652176351606</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,14 +319,38 @@
     <option name="LAST_COMMIT_MESSAGE" value="update project..." />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1143" height="252" key="GridCell.Tab.0.bottom" timestamp="1652236276152">
+      <screen x="72" y="27" width="2488" height="1413" />
+    </state>
+    <state width="1143" height="252" key="GridCell.Tab.0.bottom/72.27.2488.1413@72.27.2488.1413" timestamp="1652236276152" />
+    <state width="1143" height="252" key="GridCell.Tab.0.center" timestamp="1652236276152">
+      <screen x="72" y="27" width="2488" height="1413" />
+    </state>
+    <state width="1143" height="252" key="GridCell.Tab.0.center/72.27.2488.1413@72.27.2488.1413" timestamp="1652236276152" />
+    <state width="1143" height="252" key="GridCell.Tab.0.left" timestamp="1652236276151">
+      <screen x="72" y="27" width="2488" height="1413" />
+    </state>
+    <state width="1143" height="252" key="GridCell.Tab.0.left/72.27.2488.1413@72.27.2488.1413" timestamp="1652236276151" />
+    <state width="1143" height="252" key="GridCell.Tab.0.right" timestamp="1652236276152">
+      <screen x="72" y="27" width="2488" height="1413" />
+    </state>
+    <state width="1143" height="252" key="GridCell.Tab.0.right/72.27.2488.1413@72.27.2488.1413" timestamp="1652236276152" />
+    <state x="922" y="510" width="726" height="497" key="MultipleFileMergeDialog" timestamp="1652177183316">
+      <screen x="72" y="27" width="2488" height="1413" />
+    </state>
+    <state x="922" y="510" width="726" height="497" key="MultipleFileMergeDialog/72.27.2488.1413@72.27.2488.1413" timestamp="1652177183316" />
     <state x="779" y="390" width="1022" height="737" key="SettingsEditor" timestamp="1644907047543">
       <screen x="72" y="27" width="2488" height="1413" />
     </state>
     <state x="779" y="390" width="1022" height="737" key="SettingsEditor/72.27.2488.1413@72.27.2488.1413" timestamp="1644907047543" />
-    <state x="937" y="531" width="697" height="491" key="git4idea.merge.GitPullDialog" timestamp="1652176319034">
+    <state x="885" y="487" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1652177518128">
       <screen x="72" y="27" width="2488" height="1413" />
     </state>
-    <state x="937" y="531" width="697" height="491" key="git4idea.merge.GitPullDialog/72.27.2488.1413@72.27.2488.1413" timestamp="1652176319034" />
+    <state x="885" y="487" width="800" height="543" key="Vcs.Push.Dialog.v2/72.27.2488.1413@72.27.2488.1413" timestamp="1652177518128" />
+    <state x="937" y="531" width="697" height="512" key="git4idea.merge.GitPullDialog" timestamp="1652177103320">
+      <screen x="72" y="27" width="2488" height="1413" />
+    </state>
+    <state x="937" y="531" width="697" height="512" key="git4idea.merge.GitPullDialog/72.27.2488.1413@72.27.2488.1413" timestamp="1652177103320" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -332,6 +368,6 @@
     <SUITE FILE_PATH="coverage/yolov5_deepsort_tensorrt$feature_extractor.coverage" NAME="feature_extractor Coverage Results" MODIFIED="1624331538956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deep_sort/deep_sort/deep" />
     <SUITE FILE_PATH="coverage/yolov5_deepsort_tensorrt$detector_trt.coverage" NAME="detector_trt Coverage Results" MODIFIED="1624007692827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/yolov5_deepsort_tensorrt$999.coverage" NAME="999 Coverage Results" MODIFIED="1624339003161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deep_sort/deep_sort/deep" />
-    <SUITE FILE_PATH="coverage/yolov5_deepsort_tensorrt$demo_trt.coverage" NAME="demo_trt Coverage Results" MODIFIED="1626675660745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/yolov5_deepsort_tensorrt$demo_trt.coverage" NAME="demo_trt Coverage Results" MODIFIED="1652236164846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -36,14 +36,14 @@ the *X86* architecture with GTX 2080Ti :
 | Networks          | Without TensorRT      | With TensorRT          |
 | :---------------- | --------------------- | ---------------------- |
 | YOLOV5            | 14ms / 71FPS / 1239M  | 10ms /  100FPS / 2801M |
-| YOLOV5 + DeepSort | 23ms / 43FPS /  1276M | 16ms / 62FPS / 2842M   |
+| YOLOV5 + DeepSort | 23ms / 43FPS /  1276M | 12ms / 82FPS / 1712M   |
 
 NVIDIA Jetson Xavier NX:
 
 | Networks          | Without TensorRT | With TensorRT          |
 | :---------------- | ---------------- | ---------------------- |
 | YOLOV5            | \                | 43ms /  23FPS / 1397M  |
-| YOLOV5 + DeepSort | \                | 163ms / 6FPS / 3241M   |
+| YOLOV5 + DeepSort | \                | 63ms / 15FPS / 2431M   |
 
 ## Inference
 

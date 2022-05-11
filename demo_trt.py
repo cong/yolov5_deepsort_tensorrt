@@ -30,7 +30,7 @@ def detect(video_path, engine_file_path):
         t1 = time.time()
         bboxes = detector.detect(img)
         # print((time.time() - t1) * 1000)
-        print('--------deep---------')
+
         if len(bboxes) > 0:
             # t2 = time.time()
             list_bboxs = tracker_trt.update(bboxes, img)
