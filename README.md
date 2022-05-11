@@ -7,9 +7,6 @@ This repo uses **YOLOv5** and **DeepSORT** to implement object tracking algorith
 **NVIDIA Jetson Xavier NX**  and the *X86* architecture works all be ok. 
 
 
-
-
-
 ## Environments
 
 1. the *X86* architecture: 
@@ -76,8 +73,8 @@ NVIDIA Jetson Xavier NX:
 1. generate `***.wts` from PyTorch with `***.pt`.
 
    ```shell
-   git clone -b v5.0 https://github.com/ultralytics/yolov5.git
-   git clone https://github.com/wang-xinyu/tensorrtx.git
+   git clone -b v4.0 https://github.com/ultralytics/yolov5.git
+   git clone -b v4.0 https://github.com/wang-xinyu/tensorrtx.git
    # download https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
    cp {tensorrtx}/yolov5/gen_wts.py {ultralytics}/yolov5
    cd {ultralytics}/yolov5

@@ -222,7 +222,7 @@
       <workItem from="1644979694271" duration="1924000" />
       <workItem from="1649226205827" duration="613000" />
       <workItem from="1652173404956" duration="3327000" />
-      <workItem from="1652235799282" duration="1441000" />
+      <workItem from="1652235799282" duration="3417000" />
     </task>
     <task id="LOCAL-00001" summary="upload project...">
       <created>1623218122387</created>
@@ -308,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652236978768</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update project...">
+      <created>1652237257723</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652237257723</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,22 +339,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="update project..." />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1143" height="252" key="GridCell.Tab.0.bottom" timestamp="1652236276152">
+    <state width="2287" height="252" key="GridCell.Tab.0.bottom" timestamp="1652238593521">
       <screen x="72" y="27" width="2488" height="1413" />
     </state>
-    <state width="1143" height="252" key="GridCell.Tab.0.bottom/72.27.2488.1413@72.27.2488.1413" timestamp="1652236276152" />
-    <state width="1143" height="252" key="GridCell.Tab.0.center" timestamp="1652236276152">
+    <state width="2287" height="252" key="GridCell.Tab.0.bottom/72.27.2488.1413@72.27.2488.1413" timestamp="1652238593521" />
+    <state width="2287" height="252" key="GridCell.Tab.0.center" timestamp="1652238593521">
       <screen x="72" y="27" width="2488" height="1413" />
     </state>
-    <state width="1143" height="252" key="GridCell.Tab.0.center/72.27.2488.1413@72.27.2488.1413" timestamp="1652236276152" />
-    <state width="1143" height="252" key="GridCell.Tab.0.left" timestamp="1652236276151">
+    <state width="2287" height="252" key="GridCell.Tab.0.center/72.27.2488.1413@72.27.2488.1413" timestamp="1652238593521" />
+    <state width="2287" height="252" key="GridCell.Tab.0.left" timestamp="1652238593521">
       <screen x="72" y="27" width="2488" height="1413" />
     </state>
-    <state width="1143" height="252" key="GridCell.Tab.0.left/72.27.2488.1413@72.27.2488.1413" timestamp="1652236276151" />
-    <state width="1143" height="252" key="GridCell.Tab.0.right" timestamp="1652236276152">
+    <state width="2287" height="252" key="GridCell.Tab.0.left/72.27.2488.1413@72.27.2488.1413" timestamp="1652238593521" />
+    <state width="2287" height="252" key="GridCell.Tab.0.right" timestamp="1652238593521">
       <screen x="72" y="27" width="2488" height="1413" />
     </state>
-    <state width="1143" height="252" key="GridCell.Tab.0.right/72.27.2488.1413@72.27.2488.1413" timestamp="1652236276152" />
+    <state width="2287" height="252" key="GridCell.Tab.0.right/72.27.2488.1413@72.27.2488.1413" timestamp="1652238593521" />
     <state x="922" y="510" width="726" height="497" key="MultipleFileMergeDialog" timestamp="1652177183316">
       <screen x="72" y="27" width="2488" height="1413" />
     </state>
@@ -381,6 +388,6 @@
     <SUITE FILE_PATH="coverage/yolov5_deepsort_tensorrt$feature_extractor.coverage" NAME="feature_extractor Coverage Results" MODIFIED="1624331538956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deep_sort/deep_sort/deep" />
     <SUITE FILE_PATH="coverage/yolov5_deepsort_tensorrt$detector_trt.coverage" NAME="detector_trt Coverage Results" MODIFIED="1624007692827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/yolov5_deepsort_tensorrt$999.coverage" NAME="999 Coverage Results" MODIFIED="1624339003161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deep_sort/deep_sort/deep" />
-    <SUITE FILE_PATH="coverage/yolov5_deepsort_tensorrt$demo_trt.coverage" NAME="demo_trt Coverage Results" MODIFIED="1652236164846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/yolov5_deepsort_tensorrt$demo_trt.coverage" NAME="demo_trt Coverage Results" MODIFIED="1652238593514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
