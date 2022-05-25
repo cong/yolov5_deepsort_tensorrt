@@ -114,13 +114,13 @@ NVIDIA Jetson Xavier NX:
    cd {ZQPei}/deep_sort_pytorch
    python exportOnnx.py
    # a file 'deepsort.onnx' will be generated.
-   cp {GesilaA}/deepsort_tensorrt/deepsort.onnx {ZQPei}/deep_sort_pytorch
+   cp {ZQPei}/deep_sort_pytorch/deepsort.onnx {GesilaA}/deepsort_tensorrt
    ```
 
 2. build `{GesilaA}/deepsort_tensorrt` and generate `***.engine`
 
    ```shell
-   cd {ZQPei}/deep_sort_pytorch
+   cd {GesilaA}/deepsort_tensorrt
    # 
    mkdir build
    cd build
